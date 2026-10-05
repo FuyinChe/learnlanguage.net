@@ -21,7 +21,7 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "LearnLanguage",
-  description: "法语动词助手、粤语助手、法语阅读助手，以及以后会加上的语言工具。",
+  description: "练法语动词变位，读法语材料，以及把句子写成粤语并听出发音。",
   metadataBase: new URL("https://learnlanguage.net"),
 };
 

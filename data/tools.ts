@@ -25,8 +25,8 @@ export const tools: Tool[] = [
     code: "FVA",
     name: { zh: "法语动词助手", en: "French Verb Assistant" },
     summary: {
-      zh: "按 A1–B2 练习法语动词变位，复习间隔跟着遗忘曲线走。",
-      en: "Practice French verb conjugation from A1 to B2. Review spacing follows a forgetting curve.",
+      zh: "用来记住 A1–B2 的法语动词变位。复习间隔跟着遗忘曲线走，答错过的会再出现。",
+      en: "For remembering French verb forms from A1 to B2. Reviews follow a forgetting curve, and missed answers come back.",
     },
     points: {
       zh: ["372 个核心动词，带中英文释义", "全部、按语式或按时态练习", "错题本和按语态的进度"],
@@ -39,11 +39,27 @@ export const tools: Tool[] = [
     accent: "#1f4e89",
   },
   {
+    code: "FRA",
+    name: { zh: "法语阅读助手", en: "French Reading Assistant" },
+    summary: {
+      zh: "用来读法语材料。在页面上框选一段，识别文字、听朗读，并查看语法和词汇说明。",
+      en: "For reading French. Select a passage on the page to recognize the text, hear it, and see notes on grammar and vocabulary.",
+    },
+    points: {
+      zh: ["框选后做法语 OCR", "edge-tts 朗读", "语法、词汇解释和笔记"],
+      en: ["French OCR on a selected region", "Read-aloud with edge-tts", "Grammar, vocabulary, and notes"],
+    },
+    host: "fra.learnlanguage.net",
+    repo: "https://github.com/FuyinChe/FrenchReadingAssisstant-stirlingPDF",
+    status: "soon",
+    accent: "#2c6b4a",
+  },
+  {
     code: "CA",
     name: { zh: "粤语助手", en: "Cantonese Assistant" },
     summary: {
-      zh: "把简体或繁体换成粤语书面说法，标粤拼，并排对照香港繁体、台湾繁体和简体。",
-      en: "Turn simplified or traditional text into written Cantonese, with Jyutping and Hong Kong, Taiwan, and simplified scripts side by side.",
+      zh: "用来把句子写成粤语。简体或繁体都会换成书面说法，标上粤拼，并对照香港繁体、台湾繁体和简体。",
+      en: "For writing a sentence in Cantonese. Simplified or traditional input becomes written Cantonese, with Jyutping and Hong Kong, Taiwan, and simplified scripts side by side.",
     },
     points: {
       zh: ["点字听读，点粤拼改多音字", "整句粤语、国语、普通话和英语朗读", "笔顺工作纸和日常短句"],
@@ -54,21 +70,5 @@ export const tools: Tool[] = [
     repo: "https://github.com/FuyinChe/CantoneseAssisstant",
     status: "live",
     accent: "#9c3b2e",
-  },
-  {
-    code: "FRA",
-    name: { zh: "法语阅读助手", en: "French Reading Assistant" },
-    summary: {
-      zh: "在 PDF 上框选法语，识别文字、朗读，并用 AI 解释语法和词汇。网站入口还在准备。",
-      en: "Select French on a PDF, recognize the text, hear it read aloud, and get an AI explanation. The website is not open yet.",
-    },
-    points: {
-      zh: ["框选后做法语 OCR", "edge-tts 朗读", "语法、词汇解释和笔记"],
-      en: ["French OCR on a selected region", "Read-aloud with edge-tts", "Grammar, vocabulary, and notes"],
-    },
-    host: "fra.learnlanguage.net",
-    repo: "https://github.com/FuyinChe/FrenchReadingAssisstant-stirlingPDF",
-    status: "soon",
-    accent: "#2c6b4a",
   },
 ];

@@ -6,27 +6,39 @@ import { tools, type Locale } from "@/data/tools";
 const copy = {
   zh: {
     eyebrow: "LearnLanguage.net",
-    title: "语言工具",
-    lede: "每个工具住在自己的二级域名上。从这里进去。以后加上的页面也排在同一份清单里。",
+    title: "学法语，也学粤语",
+    lede: "用来记住法语动词怎么变，读材料时听一遍、看懂一句，以及把句子写成粤语并听出发音。",
     live: "已开放",
     soon: "筹备中",
     open: "打开",
-    repo: "仓库",
-    note: "要加一个新工具，在 data/tools.ts 里追加一条，再推送到仓库。",
-    footer: "个人学习项目",
+    home: "主页",
+    copyright: "© 2026 LearnLanguage",
   },
   en: {
     eyebrow: "LearnLanguage.net",
-    title: "Language tools",
-    lede: "Each tool lives on its own subdomain. Start here. New pages join the same list.",
+    title: "French and Cantonese",
+    lede: "For remembering how French verbs change, hearing and understanding a passage while reading, and rewriting a sentence in Cantonese so it can be heard.",
     live: "Open",
     soon: "In preparation",
     open: "Open",
-    repo: "Repository",
-    note: "To add a tool, append an entry in data/tools.ts and push.",
-    footer: "A personal learning project",
+    home: "Home",
+    copyright: "© 2026 LearnLanguage",
   },
 } as const;
+
+const siteUrl = "https://learnlanguage.net";
+const siteRepo = "https://github.com/FuyinChe/learnlanguage.net";
+
+function GitHubMark() {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.7 7.7 0 0 1 8 3.47c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+      />
+    </svg>
+  );
+}
 
 const storageKey = "learnlanguage-locale";
 
@@ -70,6 +82,7 @@ export function Home() {
 
       <section className="grid" aria-label={text.title}>
         {tools.map((tool) => {
+          const href = tool.url ?? `https://${tool.host}`;
           const open = tool.status === "live" && tool.url;
           return (
             <article className="card" key={tool.code}>
@@ -88,15 +101,17 @@ export function Home() {
                 ))}
               </ul>
               <div className="card-foot">
-                <p className="host">{tool.host}</p>
+                <p className="host">
+                  <a href={href}>{tool.host}</a>
+                </p>
                 <div className="actions">
                   {open ? (
                     <a className="primary" href={tool.url}>
                       {text.open}
                     </a>
                   ) : null}
-                  <a className={open ? "secondary" : "primary"} href={tool.repo}>
-                    {text.repo}
+                  <a className="github" href={tool.repo} aria-label="GitHub">
+                    <GitHubMark />
                   </a>
                 </div>
               </div>
@@ -105,11 +120,19 @@ export function Home() {
         })}
       </section>
 
-      <p className="note">{text.note}</p>
-
       <footer>
-        <span>{text.footer}</span>
-        <a href="https://github.com/FuyinChe/learnlanguage.net">GitHub</a>
+        <nav className="footer-links" aria-label={locale === "zh" ? "页面" : "Pages"}>
+          <a href={siteUrl}>{text.home}</a>
+          {tools.map((tool) => (
+            <a key={tool.code} href={tool.url ?? `https://${tool.host}`}>
+              {tool.name[locale]}
+            </a>
+          ))}
+          <a className="footer-github" href={siteRepo} aria-label="GitHub">
+            <GitHubMark />
+          </a>
+        </nav>
+        <span className="copyright">{text.copyright}</span>
       </footer>
     </div>
   );

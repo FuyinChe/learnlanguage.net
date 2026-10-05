@@ -218,15 +218,20 @@ h2 {
 
 .host {
   margin: 0;
-  color: var(--ink);
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.78rem;
   word-break: break-all;
 }
 
+.host a {
+  color: var(--ink);
+  text-underline-offset: 3px;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
 }
 
@@ -241,6 +246,23 @@ h2 {
   font-size: 0.88rem;
 }
 
+.actions a.github {
+  width: 36px;
+  padding: 0;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: transparent;
+}
+
+.actions a.github svg {
+  width: 18px;
+  height: 18px;
+}
+
+.github:hover {
+  background: var(--soft);
+}
+
 .primary {
   background: var(--ink);
   color: #fffdf8;
@@ -251,31 +273,48 @@ h2 {
   background: transparent;
 }
 
-.note {
-  margin: 28px 0 0;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-
-.note code {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 0.84em;
-}
-
 footer {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-top: 48px;
-  padding-top: 18px;
+  gap: 14px 28px;
+  margin-top: 56px;
+  padding-top: 20px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.92rem;
 }
 
-footer a {
-  text-underline-offset: 3px;
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--ink);
+}
+
+.footer-github {
+  display: inline-flex;
+  margin-left: 4px;
+}
+
+.footer-github svg {
+  width: 18px;
+  height: 18px;
+}
+
+.copyright {
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
 @media (max-width: 860px) {
@@ -285,9 +324,5 @@ footer a {
 
   .hero {
     margin-top: 48px;
-  }
-
-  footer {
-    flex-direction: column;
   }
 }
