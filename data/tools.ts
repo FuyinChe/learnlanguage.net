@@ -50,8 +50,9 @@ export const tools: Tool[] = [
       en: ["French OCR on a selected region", "Read-aloud with edge-tts", "Grammar, vocabulary, and notes"],
     },
     host: "fra.learnlanguage.net",
+    url: "https://fra.learnlanguage.net",
     repo: "https://github.com/FuyinChe/FrenchReadingAssisstant-stirlingPDF",
-    status: "soon",
+    status: "live",
     accent: "#2c6b4a",
   },
   {

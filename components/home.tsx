@@ -11,7 +11,7 @@ const copy = {
     live: "已开放",
     soon: "筹备中",
     open: "打开",
-    home: "主页",
+    home: "主站",
     copyright: "© 2026 LearnLanguage",
   },
   en: {
@@ -21,7 +21,7 @@ const copy = {
     live: "Open",
     soon: "In preparation",
     open: "Open",
-    home: "Home",
+    home: "Main site",
     copyright: "© 2026 LearnLanguage",
   },
 } as const;

@@ -9,10 +9,10 @@ LearnLanguage is the entry point for these French and Cantonese study tools. Eac
 | 代号 | 名称 | 用途 | 状态 | 网站 | 仓库 |
 | --- | --- | --- | --- | --- | --- |
 | FVA | 法语动词助手<br>French Verb Assistant | 按 A1–B2 记住法语动词变位，复习间隔跟随遗忘曲线 | 已开放 | [fva.learnlanguage.net](https://fva.learnlanguage.net) | [FrenchVerbAssisstant](https://github.com/FuyinChe/FrenchVerbAssisstant) |
-| FRA | 法语阅读助手<br>French Reading Assistant | 在阅读材料上框选文字，识别、朗读，并查看语法与词汇说明 | 筹备中 | fra.learnlanguage.net | [FrenchReadingAssisstant-stirlingPDF](https://github.com/FuyinChe/FrenchReadingAssisstant-stirlingPDF) |
+| FRA | 法语阅读助手<br>French Reading Assistant | 在阅读材料上框选文字，识别、朗读，并查看语法与词汇说明 | 已开放 | [fra.learnlanguage.net](https://fra.learnlanguage.net) | [FrenchReadingAssisstant-stirlingPDF](https://github.com/FuyinChe/FrenchReadingAssisstant-stirlingPDF) |
 | CA | 粤语助手<br>Cantonese Assistant | 把句子写成粤语书面语，标注粤拼，并对照香港繁体、台湾繁体与简体 | 已开放 | [cantonese.learnlanguage.net](https://cantonese.learnlanguage.net) | [CantoneseAssisstant](https://github.com/FuyinChe/CantoneseAssisstant) |
 
-粤语助手的主机名是 `cantonese.learnlanguage.net`。法语阅读助手的域名尚未提供服务，页面上的入口指向仓库。
+粤语助手的主机名是 `cantonese.learnlanguage.net`。
 
 ## 维护
 
