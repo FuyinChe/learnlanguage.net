@@ -5,6 +5,7 @@
   --card: #fffdf8;
   --line: #e3d8c6;
   --soft: #efe6d6;
+  --accent: #1c1915;
   color-scheme: light;
 }
 
@@ -44,15 +45,16 @@ a {
 .top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 0.75rem 0.85rem;
 }
 
 .brand {
   display: flex;
   align-items: baseline;
   gap: 10px;
+  min-width: 0;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .brand-mark {
@@ -67,26 +69,32 @@ a {
 }
 
 .lang {
-  display: flex;
-  padding: 3px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 2px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--card);
 }
 
 .lang button {
+  appearance: none;
   border: 0;
   background: transparent;
   color: var(--muted);
   border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 0.85rem;
+  font: inherit;
+  font-size: 0.78rem;
+  line-height: 1;
+  min-height: 1.85rem;
+  padding: 0 0.65rem;
   cursor: pointer;
 }
 
 .lang button[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--accent);
+  color: #ffffff;
 }
 
 .hero {
@@ -315,6 +323,34 @@ footer {
 .copyright {
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+@media (max-width: 720px) {
+  .top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 0.75rem;
+    row-gap: 0.35rem;
+  }
+
+  .brand {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .lang {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    margin-left: 0;
+  }
+
+  .lang button {
+    font-size: 0.72rem;
+    min-height: 1.65rem;
+    padding: 0 0.5rem;
+  }
 }
 
 @media (max-width: 860px) {
